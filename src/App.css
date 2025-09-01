@@ -1,56 +1,78 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #00d2ff, #3a47d5);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
 }
-body{
-    background-color: black;
+
+section {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
+
+.traffic {
+  width: 120px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #222;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
-.traffic{
-    border: 6px solid rgb(9, 5, 247);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
-    background-color:white;
+
+.traffic div {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 5px #000 inset;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.one{
-    border: 4px solid red;
-    border-radius: 50px;
+
+.traffic .one[style*="red"] {
+  box-shadow: 0 0 20px 8px red;
+}
+.traffic .two[style*="yellow"] {
+  box-shadow: 0 0 20px 8px yellow;
+}
+.traffic .three[style*="green"] {
+  box-shadow: 0 0 20px 8px lime;
+}
+
+button {
+  background-color: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.5);
+}
+
+button:hover {
+  background-color: #00e6b8;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 255, 204, 0.8);
+}
+
+@media (max-width: 600px) {
+  .traffic {
     width: 100px;
-    height: 100px;
-   
-}
-.two{
-    border: 4px solid yellow;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-}
-.three{
-    border: 4px solid green;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-}
-button{
-   display:flex;
-   flex-direction: column;
-   width: 100px;
-   height: 30px;
-   align-items: center;
-   justify-content: center;
-   cursor: pointer;
-   background-color: white;
+  }
+
+  .traffic div {
+    width: 60px;
+    height: 60px;
+  }
 }

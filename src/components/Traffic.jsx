@@ -22,6 +22,7 @@ const Traffic = () => {
     const [yellow, setYellow] = useState(offColor)
     const [green, setGreen] = useState(offColor)
     const [currentLight, setCurrentLight] = useState(null)
+    const [correct, setCorrect] = useState(0)
 
            
 
@@ -43,9 +44,11 @@ const Traffic = () => {
 
     useEffect(() => {
         
-        setTimeout(() => {
+        const interval = setTimeout(() => {
             randomCol();
         }, 200);
+
+         return () => clearInterval(interval);
 
     }, [randomCol]);
 
@@ -54,19 +57,25 @@ const Traffic = () => {
     const changeLight = () => {
         if(currentLight === 'red') alert("Game Over")
         if(currentLight === 'yellow') alert("Almost There")
-        if(currentLight === 'green') alert("You Win you are great")
+        if(currentLight === 'green') {
+            setCorrect(correct + 1)
+        }
     }
 
 
     return (
         <>
             <section>
-
+                 <h1>Traffic Light Reflex</h1>
+                 <h1>How To Play?</h1>
+                 <p>Traffic light change randomly (red, yellow, green). User must click "Go" only when green. Wrong click means game over</p>
                 <div className='traffic'>
+                   
                     <div className='one' style={red}></div>
                     <div className='two' style={yellow}></div>
                     <div className='three' style={green}></div>
                 </div>
+                <h1>Green Pressed : {correct}</h1>
                 <button onClick={changeLight}>Go</button>
             </section>
         </>
