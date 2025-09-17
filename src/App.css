@@ -1,78 +1,88 @@
+/* Traffic.css */
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #00d2ff, #3a47d5);
-  color: #fff;
-  text-align: center;
   margin: 0;
-  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 section {
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  width: 350px;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f1c40f;
+}
+
+p {
+  font-size: 14px;
+  color: #ecf0f1;
+  margin-bottom: 20px;
 }
 
 .traffic {
-  width: 120px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #222;
-  border-radius: 2rem;
+  background: #111;
+  padding: 20px 10px;
+  border-radius: 30px;
+  width: 100px;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 15px;
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.8);
 }
 
 .traffic div {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 0 5px #000 inset;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5),
+              0 0 15px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
 }
 
-.traffic .one[style*="red"] {
-  box-shadow: 0 0 20px 8px red;
+/* Glow effect when active */
+.one[style*="red"] {
+  box-shadow: 0 0 20px red, inset 0 0 10px rgba(0,0,0,0.6);
 }
-.traffic .two[style*="yellow"] {
-  box-shadow: 0 0 20px 8px yellow;
+.two[style*="yellow"] {
+  box-shadow: 0 0 20px yellow, inset 0 0 10px rgba(0,0,0,0.6);
 }
-.traffic .three[style*="green"] {
-  box-shadow: 0 0 20px 8px lime;
+.three[style*="green"] {
+  box-shadow: 0 0 20px lime, inset 0 0 10px rgba(0,0,0,0.6);
 }
 
 button {
-  background-color: #00ffcc;
-  color: #000;
-  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  border-radius: 30px;
   cursor: pointer;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.5);
 }
 
 button:hover {
-  background-color: #00e6b8;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(0, 255, 204, 0.8);
-}
-
-@media (max-width: 600px) {
-  .traffic {
-    width: 100px;
-  }
-
-  .traffic div {
-    width: 60px;
-    height: 60px;
-  }
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
