@@ -1,4 +1,4 @@
-/* ===== GLOBAL STYLES ===== */
+
 body {
   margin: 0;
   padding: 0;
@@ -14,10 +14,10 @@ a {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
+  align-items: center;
   gap: 20px;
-  background: #1f1f1f;
-  padding: 10px;
+  background: #2c2827ee;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -32,10 +32,9 @@ nav a {
 }
 
 nav a:hover {
-  background: #333;
+  background: #3904f7;
 }
 
-/* ===== HOME PAGE ===== */
 .home-page {
   padding: 20px;
 }
@@ -68,19 +67,18 @@ nav a:hover {
 
 .play-btn {
   padding: 10px 20px;
-  background: #4caf50;
+  background: #b709ce;
   border: none;
   color: white;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .play-btn:hover {
-  background: #45a049;
+  background: #f1062d;
 }
-
-/* ===== INFO SECTION ===== */
 .info-section {
   margin: 20px 0;
 }
@@ -103,7 +101,6 @@ nav a:hover {
   margin-top: 0;
 }
 
-/* ===== LEADERBOARD ===== */
 .leaderboard-section {
   margin-top: 20px;
   padding: 10px;
@@ -121,12 +118,10 @@ nav a:hover {
   border-bottom: 1px solid #333;
 }
 
-/* ===== PLAYER STATS ===== */
 .player-stats {
   margin-top: 20px;
 }
 
-/* ===== Game Page ===== */
 .game-section {
   text-align: center;
   padding: 40px 20px;
@@ -179,8 +174,6 @@ nav a:hover {
     transform: scale(1);
   }
 }
-
-/* ===== GAME OVER MODAL ===== */
 .game-over-modal {
   position: fixed;
   top: 0;
@@ -214,7 +207,6 @@ nav a:hover {
   background: darkorange;
 }
 
-/* ===== LEADERBOARD PAGE ===== */
 .leaderboard-container {
   padding: 20px;
 }
@@ -236,16 +228,7 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-/* ===== FOOTER ===== */
-.home-footer {
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  background: #1f1f1f;
-  border-radius: 5px;
-}
-
-/* ===== RESPONSIVE (Mobile) ===== */
+/* ////////////////////////////=====(Mobile) =====/////////////// */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;

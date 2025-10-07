@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("leaderboard")) || [];
-    setLeaderboard(stored); // Keep the exact order from localStorage
+    setLeaderboard(stored);
   }, []);
 
   return (

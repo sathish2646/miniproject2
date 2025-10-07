@@ -9,9 +9,11 @@ const App = () => {
   return (
     <Router>
       <nav className=".nav">
+        <h1>Traffic_light-reflex</h1>
+        <div className="link">
         <Link to="/" >Home</Link>
-        <Link to="/game" >Game</Link>
         <Link to="/leaderboard" >Leaderboard</Link>
+        </div>
 
       </nav>
       <Routes>

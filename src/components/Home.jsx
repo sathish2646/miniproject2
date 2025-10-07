@@ -43,7 +43,7 @@ const Home = () => {
       <div className="hero">
         <h1 className="game-title">🚦 Traffic Reflex Challenge</h1>
         <p className="tagline">
-          Think fast. React faster. Don’t get caught by red! 💥
+          Think fast. React faster. Don’t get caught by red! 
         </p>
 
         <input
@@ -55,10 +55,10 @@ const Home = () => {
           required
         />
         <button className="play-btn" onClick={handleAddName}>
-          ➕ Add to Leaderboard
+           Add to Leaderboard
         </button> <br />
         <button className="play-btn" onClick={handleStart}>
-          ▶ Start Game
+           Start Game
         </button>
           <section className="info-section">
         <h2>How to Play 🎮</h2>

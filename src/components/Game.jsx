@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-
 const Game = () => {
-  const redColor = { backgroundColor: "#ff1e1e", boxShadow: "0 0 30px #ff1e1e" };
-  const yellowColor = { backgroundColor: "#ffea00", boxShadow: "0 0 30px #ffea00" };
-  const greenColor = { backgroundColor: "#00ff6a", boxShadow: "0 0 30px #00ff6a" };
-  const offColor = { backgroundColor: "#222", boxShadow: "none" };
+  const redColor = { backgroundColor: "red", boxShadow: "0 0 30px red" };
+  const yellowColor = { backgroundColor: "yellow", boxShadow: "0 0 30px yellow" };
+  const greenColor = { backgroundColor: "green", boxShadow: "0 0 30px green" };
+  const offColor = { backgroundColor: "black", boxShadow: "none" };
 
   const [red, setRed] = useState(offColor);
   const [yellow, setYellow] = useState(offColor);
@@ -16,51 +15,43 @@ const Game = () => {
   const [username] = useState(localStorage.getItem("username") || "Guest");
   const [showGameOver, setShowGameOver] = useState(false);
 
-  // Random Light Generator
   const randomCol = () => {
     const lights = ["red", "yellow", "green"];
     const random = lights[Math.floor(Math.random() * lights.length)];
     setCurrentLight(random);
 
-    // Reset all lights
+
     setRed(offColor);
     setYellow(offColor);
     setGreen(offColor);
 
-    // Activate selected
     if (random === "red") setRed(redColor);
     if (random === "yellow") setYellow(yellowColor);
     if (random === "green") setGreen(greenColor);
   };
 
-  // Looping the lights
+
   useEffect(() => {
     const timer = setInterval(randomCol, 400);
     return () => clearInterval(timer);
   }, []);
 
-  // Handle button click
   const handleGoClick = () => {
     if (currentLight === "green") {
-      // Correct timing
       setScore((prev) => prev + 1);
     } else {
-      // Wrong timing — Game Over
       handleGameOver();
     }
   };
 
-  // Game Over function
   const handleGameOver = () => {
     setShowGameOver(true);
 
-    // Update High Score
     if (score > highScore) {
       setHighScore(score);
       localStorage.setItem("highScore", score);
     }
 
-    // Update Leaderboard
     if (score > 0) {
       const stored = JSON.parse(localStorage.getItem("leaderboard")) || [];
       const existing = stored.find((p) => p.name === username);
@@ -76,7 +67,6 @@ const Game = () => {
     }
   };
 
-  // Restart Game
   const handleRestart = () => {
     setShowGameOver(false);
     setScore(0);
@@ -103,10 +93,10 @@ const Game = () => {
       {showGameOver && (
         <div className="game-over-modal">
           <div className="game-over-box">
-            <h2>💥 Game Over!</h2>
+            <h2> Game Over!</h2>
             <p>Your reflexes were too slow...</p>
             <p><strong>Final Score:</strong> {score}</p>
-            <button onClick={handleRestart} className="restart-btn">🔁 Try Again</button>
+            <button onClick={handleRestart} className="restart-btn">Try Again</button>
           </div>
         </div>
       )}
