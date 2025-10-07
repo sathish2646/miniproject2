@@ -1,101 +1,280 @@
-/* Traffic.css */
-
+/* ===== GLOBAL STYLES ===== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #e46f73, #09ccee, #916de6);
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
   color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  gap: 20px;
+  background: #1f1f1f;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-section {
+nav a {
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  background: #333;
+}
+
+/* ===== HOME PAGE ===== */
+.home-page {
+  padding: 20px;
+}
+
+.hero {
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-  width: 350px;
-}
-
-h1 {
-  margin: 10px 0;
-  font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #f1c40f;
-}
-
-p {
-  font-size: 14px;
-  color: #ecf0f1;
+  padding: 20px;
+  background: linear-gradient(135deg, #4caf50, #2196f3);
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.traffic {
-  background: #111;
-  padding: 20px 10px;
-  border-radius: 30px;
-  width: 100px;
-  margin: 20px auto;
+.game-title {
+  font-size: 2rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+}
+
+.name-input {
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.play-btn {
+  padding: 10px 20px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: #45a049;
+}
+
+/* ===== INFO SECTION ===== */
+.info-section {
+  margin: 20px 0;
+}
+
+.rules-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 15px;
-  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.8);
+}
+
+.rule-card {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.rule-card h3 {
+  margin-top: 0;
+}
+
+/* ===== LEADERBOARD ===== */
+.leaderboard-section {
+  margin-top: 20px;
+  padding: 10px;
+  background: #1f1f1f;
+  border-radius: 8px;
+}
+
+.leaderboard-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.leaderboard-section li {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+/* ===== PLAYER STATS ===== */
+.player-stats {
+  margin-top: 20px;
+}
+
+/* ===== Game Page ===== */
+.game-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.traffic {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
 }
 
 .traffic div {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  margin: 0 auto;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.5),
-              0 0 15px rgba(255,255,255,0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Glow effect when active */
-.one[style*="red"] {
-  box-shadow: 0 0 20px red, inset 0 0 10px rgba(0,0,0,0.6);
-}
-.two[style*="yellow"] {
-  box-shadow: 0 0 20px yellow, inset 0 0 10px rgba(0,0,0,0.6);
-}
-.three[style*="green"] {
-  box-shadow: 0 0 20px lime, inset 0 0 10px rgba(0,0,0,0.6);
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: linear-gradient(135deg, #27ae60, #2ecc71);
+.go-btn {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #00c853, #009624);
   color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover {
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-}
-.username-input {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.go-btn:hover {
+  background: linear-gradient(45deg, #009624, #00e676);
+  transform: scale(1.1);
 }
 
-.username-input:focus {
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+
+.pulse {
+  animation: pulse-animation 1s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== GAME OVER MODAL ===== */
+.game-over-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over-box {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background: darkorange;
+}
+
+/* ===== LEADERBOARD PAGE ===== */
+.leaderboard-container {
+  padding: 20px;
+}
+
+.leaderboard-title {
+  font-size: 1.8rem;
+}
+
+.leaderboard-subtitle {
+  margin-bottom: 20px;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.home-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: #1f1f1f;
+  border-radius: 5px;
+}
+
+/* ===== RESPONSIVE (Mobile) ===== */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rules-grid {
+    flex-direction: column;
+  }
+
+  .name-input {
+    width: 100%;
+  }
+
+  .rule-card {
+    width: 100%;
+  }
+
+  .traffic-lights {
+    gap: 10px;
+  }
+
+  .light {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-btn, .go-btn, .restart-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
 }
